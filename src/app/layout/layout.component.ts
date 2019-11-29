@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material';
 import {CreateMantraComponent} from '../create-mantra/create-mantra.component';
+import {LetterObject} from './letter.object';
 
 @Component({
   selector: 'app-layout',
@@ -9,7 +10,7 @@ import {CreateMantraComponent} from '../create-mantra/create-mantra.component';
 })
 export class LayoutComponent implements OnInit {
 
-  letters: any;
+  letters: LetterObject[];
 
   constructor(public dialog: MatDialog) { }
 
