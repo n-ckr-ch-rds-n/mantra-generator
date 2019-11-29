@@ -11,6 +11,7 @@ import {LetterObject} from './letter.object';
 export class LayoutComponent implements OnInit {
 
   letters: LetterObject[];
+  mantra: string;
 
   constructor(public dialog: MatDialog) { }
 
@@ -23,7 +24,7 @@ export class LayoutComponent implements OnInit {
   openDialog() {
     const ref = this.dialog.open(CreateMantraComponent);
     ref.afterClosed().subscribe(result => {
-      this.letters = this.setLetters(result);
+      this.letters = this.setLetters(result || "");
     });
   }
 

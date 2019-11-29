@@ -1,9 +1,11 @@
-<div fxLayout="row" fxLayoutAlign="space-around" [style.padding]="'1rem'">
+<div fxLayout="row wrap" fxLayoutAlign="space-around" [style.padding]="'1rem'">
   <button mat-stroked-button color="primary" (click)="openDialog()">New mantra</button>
   <button mat-stroked-button color="accent" (click)="changeOrder()">Shuffle</button>
 </div>
 
-<div fxLayout="row wrap" fxLayoutGap="2rem">
-  <div *ngFor="let letter of letters" class="letter" id="letter-{{letter.value}}" [style.background-color]="letter.color">
-    {{letter.value}}</div>
+<div fxLayout="row wrap" fxLayoutGap="0.5rem">
+  <div *ngFor="let letter of letters" id="letter-{{letter.value}}" class="letter-container">
+    <div class="letter" [style.background-color]="letter.color">{{letter.value}}</div>
+  </div>
 </div>
+<p></p>
