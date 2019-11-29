@@ -12,6 +12,7 @@ export class LayoutComponent implements OnInit {
 
   letters: LetterObject[];
   mantra: string;
+  alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
   constructor(public dialog: MatDialog) { }
 
@@ -19,18 +20,19 @@ export class LayoutComponent implements OnInit {
     const indices = [1, 2].map(() => this.getRandomInteger(0, (this.letters.length - 1)));
     this.animateChange(indices);
     [this.letters[indices[0]], this.letters[indices[1]]] = [this.letters[indices[1]], this.letters[indices[0]]];
+    this.mantra = this.letters.map(letter => letter.value).join('');
   }
 
   openDialog() {
     const ref = this.dialog.open(CreateMantraComponent);
     ref.afterClosed().subscribe(result => {
-      this.letters = this.setLetters(result || "");
+      this.letters = this.setLetters(result || '');
     });
   }
 
   setLetters(intention: string) {
     const letterArray = intention.toUpperCase().split('')
-      .filter(letter => letter !== ' ');
+      .filter(letter => letter !== ' ' && this.alphabet.includes(letter));
     return this.deDupe(letterArray)
       .map(letter => this.toLetterObject(letter));
   }
