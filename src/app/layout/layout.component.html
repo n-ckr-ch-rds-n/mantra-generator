@@ -1,4 +1,5 @@
 <button mat-stroked-button color="primary" (click)="openDialog()">New mantra</button>
 <div fxLayout="row wrap" fxLayoutGap="2rem" (click)="changeOrder()">
-  <div *ngFor="let letter of letters" class="letter" id="letter-{{letter.value}}">{{letter.value}}</div>
+  <div *ngFor="let letter of letters" class="letter" id="letter-{{letter.value}}" [style.background-color]="letter.color">
+    {{letter.value}}</div>
 </div>

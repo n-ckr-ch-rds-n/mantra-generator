@@ -27,14 +27,14 @@ export class LayoutComponent implements OnInit {
   }
 
   setLetters(intention: string) {
-    const letterArray = intention.split('')
+    const letterArray = intention.toUpperCase().split('')
       .filter(letter => letter !== ' ');
     return this.deDupe(letterArray)
       .map(letter => this.toLetterObject(letter));
   }
 
   toLetterObject(letter: string) {
-    return {value: letter, color: `hsl(${this.getRandomInteger(0, 359)}, 30%, 30%)`};
+    return {value: letter, color: `hsl(${this.getRandomInteger(0, 359)}, 30%, 70%)`};
   }
 
   deDupe(letters: string[]) {
