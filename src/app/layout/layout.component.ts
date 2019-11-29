@@ -42,7 +42,7 @@ export class LayoutComponent implements OnInit {
   }
 
   animateChange(indices: number[]) {
-    const tiles = indices.map(i => document.querySelector(`#letter-${this.letters[i]}`));
+    const tiles = indices.map(i => document.querySelector(`#letter-${this.letters[i].value}`));
     tiles.forEach((tile, index) => {
       const startPosition = tile.getBoundingClientRect();
       const endPosition = tiles[index === 0 ? 1 : 0].getBoundingClientRect();
