@@ -12,12 +12,12 @@ export class LayoutComponent implements OnInit {
   constructor() { }
 
   changeOrder() {
-    const indices = [1, 2].map(() => this.getRandomIndex(0, this.letters.length));
+    const indices = [1, 2].map(() => this.getRandomIndex(0, (this.letters.length - 1)));
     [this.letters[indices[0]], this.letters[indices[1]]] = [this.letters[indices[1]], this.letters[indices[0]]];
   }
 
   getRandomIndex(min: number, max: number): number {
-    return Math.floor(min + Math.random() * (max + 1 - min));
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   ngOnInit() {
