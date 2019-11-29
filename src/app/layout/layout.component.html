@@ -1,4 +1,4 @@
+<button mat-stroked-button color="primary" (click)="openDialog()">New mantra</button>
 <div fxLayout="row wrap" fxLayoutGap="2rem" (click)="changeOrder()">
-  <div *ngFor="let letter of letters" class="letter" id="letter-{{letter}}"
-       [style.background-color]="'hsl(' + getRandomInteger(0, 300) + ', 50%, 50%)'">{{letter}}</div>
+  <div *ngFor="let letter of letters" class="letter" id="letter-{{letter.value}}">{{letter.value}}</div>
 </div>

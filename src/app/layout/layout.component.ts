@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {MatDialog} from '@angular/material';
+import {CreateMantraComponent} from '../create-mantra/create-mantra.component';
 
 @Component({
   selector: 'app-layout',
@@ -6,15 +8,37 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
-  @Input()
-  letters: string[];
 
-  constructor() { }
+  letters: any;
+
+  constructor(public dialog: MatDialog) { }
 
   changeOrder() {
     const indices = [1, 2].map(() => this.getRandomInteger(0, (this.letters.length - 1)));
     this.animateChange(indices);
     [this.letters[indices[0]], this.letters[indices[1]]] = [this.letters[indices[1]], this.letters[indices[0]]];
+  }
+
+  openDialog() {
+    const ref = this.dialog.open(CreateMantraComponent);
+    ref.afterClosed().subscribe(result => {
+      this.letters = this.setLetters(result);
+    });
+  }
+
+  setLetters(intention: string) {
+    const letterArray = intention.split('')
+      .filter(letter => letter !== ' ');
+    return this.deDupe(letterArray)
+      .map(letter => this.toLetterObject(letter));
+  }
+
+  toLetterObject(letter: string) {
+    return {value: letter, color: `hsl(${this.getRandomInteger(0, 359)}, 30%, 30%)`};
+  }
+
+  deDupe(letters: string[]) {
+    return letters.filter((letter, index) => index === letters.indexOf(letter));
   }
 
   animateChange(indices: number[]) {
@@ -46,6 +70,9 @@ export class LayoutComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (!this.letters) {
+      this.openDialog();
+    }
   }
 
 }
