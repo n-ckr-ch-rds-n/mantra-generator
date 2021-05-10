@@ -20,14 +20,19 @@ export class LayoutComponent implements OnInit {
     const indices = [1, 2].map(() => this.getRandomInteger(0, (this.letters.length - 1)));
     this.animateChange(indices);
     [this.letters[indices[0]], this.letters[indices[1]]] = [this.letters[indices[1]], this.letters[indices[0]]];
-    this.mantra = this.letters.map(letter => letter.value).join('');
+    this.mantra = this.toMantra(this.letters);
   }
 
   openDialog() {
     const ref = this.dialog.open(CreateMantraComponent);
     ref.afterClosed().subscribe(result => {
       this.letters = this.setLetters(result || '');
+      this.mantra = this.toMantra(this.letters);
     });
+  }
+
+  toMantra(letters: LetterObject[]): string {
+    return letters.map(letter => letter.value).join('');
   }
 
   setLetters(intention: string) {
