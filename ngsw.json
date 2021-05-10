@@ -1,0 +1,80 @@
+{
+  "configVersion": 1,
+  "timestamp": 1620667082977,
+  "index": "/mantra-generator/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/mantra-generator/favicon.ico",
+        "/mantra-generator/index.html",
+        "/mantra-generator/main-es2015.f5bd88214a026cedc328.js",
+        "/mantra-generator/main-es5.f5bd88214a026cedc328.js",
+        "/mantra-generator/manifest.webmanifest",
+        "/mantra-generator/polyfills-es2015.2987770fde9daa1d8a2e.js",
+        "/mantra-generator/polyfills-es5.6696c533341b95a3d617.js",
+        "/mantra-generator/runtime-es2015.edb2fcf2778e7bf1d426.js",
+        "/mantra-generator/runtime-es5.edb2fcf2778e7bf1d426.js",
+        "/mantra-generator/styles.d9dc716df0c684d997ec.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/mantra-generator/assets/icons/icon-128x128.png",
+        "/mantra-generator/assets/icons/icon-144x144.png",
+        "/mantra-generator/assets/icons/icon-152x152.png",
+        "/mantra-generator/assets/icons/icon-192x192.png",
+        "/mantra-generator/assets/icons/icon-384x384.png",
+        "/mantra-generator/assets/icons/icon-512x512.png",
+        "/mantra-generator/assets/icons/icon-72x72.png",
+        "/mantra-generator/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/mantra-generator/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/mantra-generator/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/mantra-generator/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/mantra-generator/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/mantra-generator/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/mantra-generator/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/mantra-generator/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/mantra-generator/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/mantra-generator/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/mantra-generator/index.html": "9e3da5556ee99e2697fbe054482f9a64ba7c612f",
+    "/mantra-generator/main-es2015.f5bd88214a026cedc328.js": "63740e3b4e181b7dab143b6a64aeae586ef0b525",
+    "/mantra-generator/main-es5.f5bd88214a026cedc328.js": "bcfabf37fe0da06e739b4733674dc30fc9bddc54",
+    "/mantra-generator/manifest.webmanifest": "45f78a02e755b032cc9069e20090e946c4e44258",
+    "/mantra-generator/polyfills-es2015.2987770fde9daa1d8a2e.js": "cf5cbfa9134716054fb479ab21362146cdf1f2ff",
+    "/mantra-generator/polyfills-es5.6696c533341b95a3d617.js": "9ceb13edd4b10268f661814868dadb2b284f9745",
+    "/mantra-generator/runtime-es2015.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/mantra-generator/runtime-es5.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/mantra-generator/styles.d9dc716df0c684d997ec.css": "26453d47ec36430b523ace93361172ee2488aa30"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
